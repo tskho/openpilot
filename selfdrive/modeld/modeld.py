@@ -93,6 +93,11 @@ class ModelState:
 
     self.inputs['traffic_convention'][:] = inputs['traffic_convention']
     self.inputs['lateral_control_params'][:] = inputs['lateral_control_params']
+<<<<<<< HEAD
+=======
+    # self.inputs['nav_features'][:] = inputs['nav_features']
+    # self.inputs['nav_instructions'][:] = inputs['nav_instructions']
+>>>>>>> 1d8dc21ae (4a105691-05f9-4419-bbac-6b558a13ec93/70 incomplete model)
 
     # if getCLBuffer is not None, frame will be None
     self.model.setInputBuffer("input_imgs", self.frame.prepare(buf, transform.flatten(), self.model.getCLBuffer("input_imgs")))
