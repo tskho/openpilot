@@ -177,8 +177,8 @@ class LongitudinalPlanner:
     a_target_mpc, should_stop_mpc = get_accel_from_plan(self.CP, longitudinalPlan.speeds, longitudinalPlan.accels)
 
     if sm['controlsState'].experimentalMode:
-      model_speeds = np.interp(T_IDXS_MPC, ModelConstants.T_IDXS, sm['modelV2'].velocity.x)
-      model_accels = np.interp(T_IDXS_MPC, ModelConstants.T_IDXS, sm['modelV2'].acceleration.x)
+      model_speeds = np.interp(CONTROL_N_T_IDX, ModelConstants.T_IDXS, sm['modelV2'].velocity.x)
+      model_accels = np.interp(CONTROL_N_T_IDX, ModelConstants.T_IDXS, sm['modelV2'].acceleration.x)
       a_target_model, should_stop_model = get_accel_from_plan(self.CP, model_speeds, model_accels)
       a_target = min(a_target_mpc, a_target_model)
       should_stop = should_stop_mpc or should_stop_model
