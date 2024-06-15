@@ -186,8 +186,8 @@ class LongitudinalPlanner:
       a_target = a_target_mpc
       should_stop = should_stop_mpc
 
-    longitudinalPlan.aTarget = a_target
-    longitudinalPlan.shouldStop = should_stop
+    longitudinalPlan.aTarget = float(a_target)
+    longitudinalPlan.shouldStop = bool(should_stop)
     longitudinalPlan.allowBrake = True
     longitudinalPlan.allowThrottle = True
 
